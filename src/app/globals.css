@@ -16,7 +16,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Background grid styling similar to the reference */
@@ -24,7 +24,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: -10;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -34,7 +34,8 @@ body {
 }
 
 /* Side glow effects */
-.glow-left, .glow-right {
+.glow-left,
+.glow-right {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -44,16 +45,19 @@ body {
   filter: blur(100px);
   opacity: 0.3;
 }
+
 .glow-left {
   left: -10vw;
   background: radial-gradient(circle at center right, #3B82F6 0%, transparent 70%);
 }
+
 .glow-right {
   right: -10vw;
   background: radial-gradient(circle at center left, #8B5CF6 0%, transparent 70%);
 }
 
 /* Hide Next.js Development Indicator */
-nextjs-portal, #nextjs-build-indicator {
+nextjs-portal,
+#nextjs-build-indicator {
   display: none !important;
 }

@@ -1,25 +1,70 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/data/siteData";
 import Image from "next/image";
 import { ScrollReveal } from "./ScrollReveal";
+import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Hero() {
     const { personal } = siteData;
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
     return (
         <section className="pt-12 pb-8 flex flex-col gap-6 relative min-h-[70vh] justify-center">
+            <AnimatePresence>
+                {isLightboxOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+                        onClick={() => setIsLightboxOpen(false)}
+                    >
+                        <motion.button
+                            className="absolute top-6 right-6 text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 p-2 rounded-full transition-colors z-50 backdrop-blur-lg border border-white/10"
+                            onClick={() => setIsLightboxOpen(false)}
+                        >
+                            <X size={24} />
+                        </motion.button>
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="relative w-full max-w-xs md:max-w-sm lg:max-w-md aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/30"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Image
+                                src={personal.photoUrl || "/placeholder.png"}
+                                alt={personal.name}
+                                fill
+                                quality={100}
+                                priority
+                                sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 448px"
+                                className="object-cover"
+                            />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <ScrollReveal direction="up" duration={0.8} delay={0.1}>
                 <motion.div
-                    className="relative w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/20"
+                    className="relative w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/20 cursor-pointer"
                     whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    onClick={() => setIsLightboxOpen(true)}
                 >
                     <Image
                         src={personal.photoUrl || "/placeholder.png"}
                         alt={personal.name}
                         fill
+                        quality={100}
+                        priority
+                        sizes="(max-width: 768px) 128px, 160px"
                         className="object-cover"
                     />
                 </motion.div>

@@ -98,7 +98,6 @@ export const TracingBeam = ({ children }: { children: React.ReactNode }) => {
                         fill="none"
                         stroke="url(#gradient)"
                         strokeWidth="1.25"
-                        className="motion-reduce:hidden"
                         transition={{
                             duration: 10,
                         }}
