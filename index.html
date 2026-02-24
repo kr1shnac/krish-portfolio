@@ -1,13 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krish's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Replica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <div class="hero-header">
+          <img
+            src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=300&auto=format&fit=crop"
+            alt="Profile"
+            class="avatar"
+          />
+          <div class="socials">
+            <a href="#" aria-label="Twitter">◡</a>
+            <a href="#" aria-label="Blog">◫</a>
+            <a href="#" aria-label="GitHub">◠</a>
+          </div>
+        </div>
+        <h1>Hi, I'm Chaitanya</h1>
+        <p class="meta">21, Delhi | Full Stack Engineer</p>
+        <p class="intro">
+          I'm a Full Stack Blockchain Developer crafting cutting-edge dApps and DeFi
+          solutions. From writing secure smart contracts to building intuitive Web3
+          interfaces, I turn complex blockchain concepts into user-friendly
+          experiences.
+        </p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <p class="section-subtitle">
+          Here's a timeline of my professional journey, showcasing my roles and
+          contributions in blockchain and full-stack development.
+        </p>
+
+        <div class="stack-cards">
+          <article class="card">
+            <h3>Software Engineer <span>· Exo Technologies</span></h3>
+            <p class="muted">Jun 2025 - Present</p>
+            <p>Building Solana-based protocols and infrastructure solutions</p>
+            <div class="tags"><span>Solana</span><span>Rust</span><span>TypeScript</span><span>Anchor</span></div>
+          </article>
+          <article class="card">
+            <h3>Full-Stack Blockchain Engineer <span>· Wildcard</span></h3>
+            <p class="muted">Past</p>
+            <p>Building smart wallet infrastructure and blockchain applications</p>
+            <div class="tags"><span>Rust</span><span>Solana</span><span>EVM</span><span>Next.js</span></div>
+          </article>
+          <article class="card">
+            <h3>Full-Stack Engineer <span>· Swifey AI</span></h3>
+            <p class="muted">Past</p>
+            <p>Full-stack development across web, mobile, and blockchain</p>
+            <div class="tags"><span>FastAPI</span><span>Node.js</span><span>React</span><span>TypeScript</span><span>Flutter</span><span>Solana</span><span>Rust</span></div>
+          </article>
+          <article class="card">
+            <h3>Founding Engineer <span>· Veritas AO</span></h3>
+            <p class="muted">2024</p>
+            <p>Building fair launch platform on Arweave's AO protocol</p>
+            <div class="tags"><span>AO</span><span>TypeScript</span><span>React</span><span>Node.js</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <p class="section-subtitle">
+          A collection of my work spanning from blockchain applications to full-stack
+          projects, both personal and professional.
+        </p>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="personal">Personal Projects</button>
+          <button class="tab" data-tab="client">Client Work</button>
+        </div>
+
+        <div class="projects active" id="personal">
+          <article class="card project">
+            <h3>Streamly <span class="status">Paused</span></h3>
+            <p>Streamyard alternative with custom SFU server and FFMPEG stream mixing</p>
+            <div class="tags"><span>WebRTC</span><span>Mediasoup</span><span>FFMPEG</span><span>Node.js</span><span>React</span></div>
+          </article>
+          <article class="card project">
+            <h3>SnipSavvy</h3>
+            <p>Code snippet management platform with multi-level sharing and organization capabilities</p>
+            <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span><span>Node.js</span><span>MongoDB</span></div>
+          </article>
+        </div>
+
+        <div class="projects" id="client">
+          <article class="card project">
+            <h3>Stream-Vault</h3>
+            <p>Decentralized video platform on WeaveVM with on-chain storage and EVM integration</p>
+            <div class="tags"><span>Arweave</span><span>EVM</span><span>React</span><span>Node.js</span><span>Solidity</span></div>
+          </article>
+          <article class="card project">
+            <h3>Rust CEX Backend</h3>
+            <p>High-performance crypto exchange backend with trade matching and pub/sub system</p>
+            <div class="tags"><span>Rust</span><span>Actix Web</span><span>PostgreSQL</span><span>Redis</span><span>TimescaleDB</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Blogs</h2>
+        <p class="section-subtitle">
+          I write about software development, sharing insights and experiences from my
+          journey in tech.
+        </p>
+        <div class="stack-cards">
+          <article class="card"><h3>When process.env Bites Back: A Node.js Performance Lesson</h3><p class="muted">May 4, 2025</p></article>
+          <article class="card"><h3>Cookie-based Authentication: A Simple Guide for Secure Sessions</h3><p class="muted">Jul 12, 2024</p></article>
+          <article class="card"><h3>Understanding TypeScript's Handling of Object Literal Types</h3><p class="muted">Jun 20, 2024</p></article>
+          <article class="card"><h3>Why Choose Next.js over React?</h3><p class="muted">Apr 14, 2024</p></article>
+          <article class="card"><h3>Need of Context API (or Similar State Management Tools)</h3><p class="muted">Mar 18, 2024</p></article>
+        </div>
+      </section>
+    </main>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
