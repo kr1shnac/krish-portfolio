@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Background grid styling similar to the reference */
+.bg-grid-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Side glow effects */
+.glow-left, .glow-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 25vw;
+  z-index: -5;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.3;
+}
+.glow-left {
+  left: -10vw;
+  background: radial-gradient(circle at center right, #3B82F6 0%, transparent 70%);
+}
+.glow-right {
+  right: -10vw;
+  background: radial-gradient(circle at center left, #8B5CF6 0%, transparent 70%);
+}
+
+/* Hide Next.js Development Indicator */
+nextjs-portal, #nextjs-build-indicator {
+  display: none !important;
+}
