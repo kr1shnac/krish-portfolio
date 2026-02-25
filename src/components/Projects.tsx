@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { siteData } from "@/data/siteData";
-import { ArrowUpRight, Github, ExternalLink, Activity, Database, Sparkles } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink, Activity, Database, Sparkles, Image as ImageIcon } from "lucide-react";
+import Image from "next/image";
 import { ScrollReveal } from "./ScrollReveal";
 
 interface ProjectItem {
@@ -16,6 +17,7 @@ interface ProjectItem {
     motivation?: string;
     architecture?: string;
     features?: string[];
+    images?: string[];
     techStack: string[];
     url: string;
     gradient: string;
@@ -235,6 +237,33 @@ export default function Projects() {
                                                 </li>
                                             ))}
                                         </ul>
+                                    </motion.div>
+                                )}
+
+                                {/* Project Images */}
+                                {selectedProject.images && selectedProject.images.length > 0 && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.4 }}
+                                        className="space-y-4 pt-4 border-t border-white/5"
+                                    >
+                                        <div className="flex items-center gap-2 text-blue-400 mb-2">
+                                            <ImageIcon className="w-5 h-5" />
+                                            <h4 className="text-lg font-semibold">Project Gallery</h4>
+                                        </div>
+                                        <div className={`grid gap-4 ${selectedProject.images.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
+                                            {selectedProject.images.map((imgSrc, idx) => (
+                                                <div key={idx} className="relative aspect-video rounded-xl overflow-hidden border border-white/10 group">
+                                                    <Image
+                                                        src={imgSrc}
+                                                        alt={`${selectedProject.title} screenshot ${idx + 1}`}
+                                                        fill
+                                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
                                     </motion.div>
                                 )}
                             </div>

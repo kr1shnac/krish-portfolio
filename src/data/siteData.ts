@@ -89,6 +89,7 @@ export const siteData = {
                 "Offline-first architecture utilizing SQLite with automated background sync.",
                 "Comprehensive Role-Based Access Control (Admin, Teacher, Student)."
             ],
+            images: [],
             techStack: ["React Native", "Capacitor", "MERN", "ML Kit", "BLE", "SQLite"],
             url: "https://github.com/kr1shnac/AttendSmart", // Assuming main repo name
             gradient: "from-teal-500/15 via-transparent to-transparent"
@@ -106,6 +107,7 @@ export const siteData = {
                 "Integrated syntax highlighting for various programming languages in code blocks.",
                 "Persistent chat history stored securely in MongoDB."
             ],
+            images: [],
             techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "OpenAI API"],
             url: "https://github.com/kr1shnac/TalksyAI",
             gradient: "from-blue-500/15 via-transparent to-transparent"
@@ -123,6 +125,7 @@ export const siteData = {
                 "Integrated image uploading and hosting via Cloudinary API.",
                 "Interactive maps integration (Mapbox API) for property locations."
             ],
+            images: [],
             techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
             url: "https://wander1ust.onrender.com",
             gradient: "from-purple-500/15 via-transparent to-transparent"
@@ -140,6 +143,7 @@ export const siteData = {
                 "Optimized asset delivery for fast performance scores.",
                 "Clear calls-to-action for class registration and inquiry."
             ],
+            images: [],
             techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
             url: "#",
             gradient: "from-red-500/15 via-transparent to-transparent"
@@ -157,6 +161,7 @@ export const siteData = {
                 "Searchable and filterable student records.",
                 "Detailed reporting for financial oversight."
             ],
+            images: [],
             techStack: ["Next.js", "React", "Node.js", "Database"],
             url: "https://skfkarate.github.io/SKF-FEETRACK/",
             gradient: "from-amber-500/15 via-transparent to-transparent"
