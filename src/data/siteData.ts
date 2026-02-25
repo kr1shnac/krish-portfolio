@@ -118,7 +118,7 @@ export const siteData = {
             category: "Client",
             description: "Developed a secure fee tracking application for the SKF Karate Association to manage student payments and records efficiently.",
             techStack: ["Next.js", "React", "Node.js", "Database"], // Placeholders, user can update
-            url: "#",
+            url: "https://skfkarate.github.io/SKF-FEETRACK/",
             gradient: "from-amber-500/15 via-transparent to-transparent"
         }
     ],

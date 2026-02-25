@@ -91,7 +91,7 @@ export default function Projects() {
                             animate={{ opacity: 1 }}
                             className="col-span-full py-12 text-center text-zinc-500"
                         >
-                            No projects available in this category yet.
+                            No projects available
                         </motion.div>
                     )}
                 </AnimatePresence>
