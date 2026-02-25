@@ -89,7 +89,10 @@ export const siteData = {
                 "Offline-first architecture utilizing SQLite with automated background sync.",
                 "Comprehensive Role-Based Access Control (Admin, Teacher, Student)."
             ],
-            images: [],
+            images: [
+                "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=1000", // abstract biometric/tech mobile app view
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"  // dashboard code style
+            ],
             techStack: ["React Native", "Capacitor", "MERN", "ML Kit", "BLE", "SQLite"],
             url: "https://github.com/kr1shnac/AttendSmart", // Assuming main repo name
             gradient: "from-teal-500/15 via-transparent to-transparent"
@@ -107,7 +110,10 @@ export const siteData = {
                 "Integrated syntax highlighting for various programming languages in code blocks.",
                 "Persistent chat history stored securely in MongoDB."
             ],
-            images: [],
+            images: [
+                "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000", // ai chat interface visualization
+                "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1000"  // code block rendering placeholder
+            ],
             techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "OpenAI API"],
             url: "https://github.com/kr1shnac/TalksyAI",
             gradient: "from-blue-500/15 via-transparent to-transparent"
@@ -125,7 +131,10 @@ export const siteData = {
                 "Integrated image uploading and hosting via Cloudinary API.",
                 "Interactive maps integration (Mapbox API) for property locations."
             ],
-            images: [],
+            images: [
+                "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000", // beach house listing view
+                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000"  // modern apartment interior listing
+            ],
             techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
             url: "https://wander1ust.onrender.com",
             gradient: "from-purple-500/15 via-transparent to-transparent"
@@ -143,7 +152,10 @@ export const siteData = {
                 "Optimized asset delivery for fast performance scores.",
                 "Clear calls-to-action for class registration and inquiry."
             ],
-            images: [],
+            images: [
+                "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=1000", // martial arts gym placeholder
+                "https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&q=80&w=1000"  // karate competition visual 
+            ],
             techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
             url: "#",
             gradient: "from-red-500/15 via-transparent to-transparent"
@@ -161,7 +173,10 @@ export const siteData = {
                 "Searchable and filterable student records.",
                 "Detailed reporting for financial oversight."
             ],
-            images: [],
+            images: [
+                "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1000", // finance dashboard overview
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" // analytics charts view
+            ],
             techStack: ["Next.js", "React", "Node.js", "Database"],
             url: "https://skfkarate.github.io/SKF-FEETRACK/",
             gradient: "from-amber-500/15 via-transparent to-transparent"
