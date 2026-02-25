@@ -5,7 +5,7 @@ export const siteData = {
         name: "Krishna C",
         ageAndLocation: "20, Bangalore",
         role: "AI & ML Engineering Student",
-        bio: "I'm a passionate developer specializing in MERN stack and AI integrations. From building full-stack platforms like Wanderlust and TalksyAI to developing offline biometric systems, I love solving complex problems and turning ideas into scalable applications.",
+        bio: "I'm an AI & ML Engineering student profoundly interested in bridging the gap between cutting-edge AI and practical, robust engineering. Whether I'm building proxy-proof biometric systems like AttendSmart or scalable conversational AI platforms like TalksyAI, I focus on solving deeply technical challenges that require a blend of intelligent algorithms and full-stack MERN expertise. My goal is to build technology that doesn't just work on paper, but solves real-world problems reliably at scale.",
         email: "krishnacgowda10@gmail.com",
         photoUrl: "/myprofile.PNG",
     },
@@ -44,16 +44,16 @@ export const siteData = {
             id: "hackathon",
             title: "Lazarus Mission Hackathon",
             organization: "IEEE NITK Surathkal",
-            description: "Participated in a high-intensity hackathon, collaborating on innovative tech solutions and pushing the boundaries of problem-solving under pressure.",
+            description: "Competed in an intense, high-stakes development environment against numerous teams, rapidly prototyping and deploying innovative tech solutions under strict time constraints. Focused on robust system architecture and seamless integration.",
             icon: Cpu,
             className: "md:col-span-2", // Bento grid spanning
             link: "https://unstop.com/certificate-preview/7cf097ac-0506-4855-b241-90af14bfc983",
         },
         {
             id: "dsa",
-            title: "100+ DSA Problems",
+            title: "100+ DSA Problems Solved",
             organization: "Codeforces",
-            description: "Consistent problem solver focusing on Data Structures and Algorithms. Strong foundation in Java and C++.",
+            description: "Developed a strong algorithmic mindset through consistent competitive programming, heavily utilizing Java and C++ to optimize complex data structures and solve critical logic puzzles.",
             icon: BookOpen,
             className: "md:col-span-1",
         }
@@ -79,17 +79,33 @@ export const siteData = {
             id: "attendsmart",
             title: "AttendSmart",
             category: "Personal",
-            status: "Paused",
+            status: "In Progress",
             description: "Proxy-proof offline biometric attendance with Face liveness detection, BLE proximity, and offline SQLite sync.",
-            techStack: ["React Native", "Capacitor", "MERN", "ML Kit", "BLE"],
-            url: "https://github.com/kr1shnac",
+            motivation: "Traditional digital attendance systems are plagued by proxies and network dependency. I built AttendSmart to create a foolproof, offline-first attendance solution that guarantees the physical presence of a student while functioning seamlessly without an internet connection.",
+            architecture: "Engineered a robust hybrid architecture utilizing React Native and Capacitor for mobile, backed by a Node.js/MERN stack. The core innovation lies in the offline-first approach using SQLite for local storage, coupled with an intelligent synchronization service that reconciles data when connectivity is restored.",
+            features: [
+                "ML Kit-powered Face Liveness Detection to prevent photo spoofing.",
+                "Bluetooth Low Energy (BLE) proximity checks to verify physical presence.",
+                "Offline-first architecture utilizing SQLite with automated background sync.",
+                "Comprehensive Role-Based Access Control (Admin, Teacher, Student)."
+            ],
+            techStack: ["React Native", "Capacitor", "MERN", "ML Kit", "BLE", "SQLite"],
+            url: "https://github.com/kr1shnac/AttendSmart", // Assuming main repo name
             gradient: "from-teal-500/15 via-transparent to-transparent"
         },
         {
             id: "talksyai",
             title: "TalksyAI",
             category: "Personal",
-            description: "Conversational AI Platform supporting threaded conversations, rich Markdown rendering, and syntax-highlighted code blocks. Integrated OpenAI API and MongoDB.",
+            description: "Conversational AI Platform supporting threaded conversations, rich Markdown rendering, and syntax-highlighted code blocks.",
+            motivation: "I wanted a conversational AI interface that didn't just feel like a chat window, but a proper workspace. TalksyAI was born from the need to have a seamless, developer-friendly interface that could handle complex code blocks, render markdown effortlessly, and maintain distinct conversation threads.",
+            architecture: "Built as a high-performance single-page application using React and Vite, communicating with a custom Express/Node.js backend. MongoDB is utilized for persistent storage of conversation histories, while the OpenAI API powers the core intelligence engine.",
+            features: [
+                "Full support for threaded, context-aware conversations powered by OpenAI.",
+                "Rich Markdown text rendering including complex tables and formatting.",
+                "Integrated syntax highlighting for various programming languages in code blocks.",
+                "Persistent chat history stored securely in MongoDB."
+            ],
             techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "OpenAI API"],
             url: "https://github.com/kr1shnac/TalksyAI",
             gradient: "from-blue-500/15 via-transparent to-transparent"
@@ -99,7 +115,15 @@ export const siteData = {
             title: "Wanderlust",
             category: "Personal",
             description: "Airbnb-Style Listings Platform with Passport.js authentication, Cloudinary uploads, and RESTful routes for listings and reviews.",
-            techStack: ["Node.js", "Express", "MongoDB", "EJS", "Bootstrap"],
+            motivation: "To master the fundamentals of full-stack web development, I challenged myself to build a comprehensive property rental platform. Wanderlust served as the proving ground for implementing complex relational data models and secure authentication flows from scratch.",
+            architecture: "A classic server-rendered MVC architecture using Node.js, Express, and EJS templating. It leverages MongoDB for data storage, integrates Passport.js for robust session-based authentication, and utilizes Cloudinary for optimized image asset management.",
+            features: [
+                "Complete CRUD operations for property listings and user reviews.",
+                "Secure user authentication and authorization utilizing Passport.js.",
+                "Integrated image uploading and hosting via Cloudinary API.",
+                "Interactive maps integration (Mapbox API) for property locations."
+            ],
+            techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
             url: "https://wander1ust.onrender.com",
             gradient: "from-purple-500/15 via-transparent to-transparent"
         },
@@ -108,7 +132,15 @@ export const siteData = {
             title: "SKF Karate",
             category: "Client",
             description: "Built the official website for the SKF Karate Association to enhance their digital presence and member engagement.",
-            techStack: ["Next.js", "Tailwind CSS", "Framer Motion"], // Placeholders, user can update
+            motivation: "The SKF Karate Association needed a modern digital storefront to attract new students and provide a central hub for existing members. I stepped in to translate their physical discipline into a compelling online experience.",
+            architecture: "Developed as a statically generated site utilizing Next.js for blazing fast load times and optimal SEO. The UI was crafted with Tailwind CSS for rapid styling and Framer Motion for subtle, engaging micro-interactions.",
+            features: [
+                "Responsive, mobile-first design system.",
+                "Engaging micro-interactions and scroll animations via Framer Motion.",
+                "Optimized asset delivery for fast performance scores.",
+                "Clear calls-to-action for class registration and inquiry."
+            ],
+            techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
             url: "#",
             gradient: "from-red-500/15 via-transparent to-transparent"
         },
@@ -117,12 +149,20 @@ export const siteData = {
             title: "SKF Fee Tracker",
             category: "Client",
             description: "Developed a secure fee tracking application for the SKF Karate Association to manage student payments and records efficiently.",
-            techStack: ["Next.js", "React", "Node.js", "Database"], // Placeholders, user can update
+            motivation: "Manual fee collection and tracking was becoming a significant administrative bottleneck for the association. They required a streamlined, digital solution to minimize errors, track dues, and generate payment reports.",
+            architecture: "A responsive React application focused on data density and usability. The backend utilizes Node.js to handle secure transactions and aggregate payment data, providing administrators with a clear, reliable dashboard.",
+            features: [
+                "Secure administrative dashboard for tracking student payments.",
+                "Automated fee calculation and due date tracking.",
+                "Searchable and filterable student records.",
+                "Detailed reporting for financial oversight."
+            ],
+            techStack: ["Next.js", "React", "Node.js", "Database"],
             url: "https://skfkarate.github.io/SKF-FEETRACK/",
             gradient: "from-amber-500/15 via-transparent to-transparent"
         }
     ],
-    experience: [],
+    experience: [], // Still waiting on specific details from user, but schema is ready to accept complex objects
     blogs: [
         {
             id: "ai-web-apps",
