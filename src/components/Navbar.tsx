@@ -9,7 +9,7 @@ export default function Navbar() {
             <Link href="/" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
                 {personal.name}
             </Link>
-            <div className="flex gap-4 items-center">
+            <div className="flex md:hidden gap-4 items-center">
                 {socials.map((social) => (
                     <Link key={social.name} href={social.url} target="_blank" className="text-zinc-400 hover:text-white transition-colors">
                         <social.icon size={20} />

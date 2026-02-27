@@ -8,7 +8,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 
 export default function Hero() {
-    const { personal } = siteData;
+    const { personal, socials } = siteData;
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
     return (
@@ -51,23 +51,37 @@ export default function Hero() {
             </AnimatePresence>
 
             <ScrollReveal direction="up" duration={0.8} delay={0.1}>
-                <motion.div
-                    className="relative w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/20 cursor-pointer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    onClick={() => setIsLightboxOpen(true)}
-                >
-                    <Image
-                        src={personal.photoUrl || "/placeholder.png"}
-                        alt={personal.name}
-                        fill
-                        quality={100}
-                        priority
-                        sizes="(max-width: 768px) 128px, 160px"
-                        className="object-cover"
-                    />
-                </motion.div>
+                <div className="flex items-start justify-between w-full">
+                    <motion.div
+                        className="relative w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/20 cursor-pointer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        onClick={() => setIsLightboxOpen(true)}
+                    >
+                        <Image
+                            src={personal.photoUrl || "/placeholder.png"}
+                            alt={personal.name}
+                            fill
+                            quality={100}
+                            priority
+                            sizes="(max-width: 768px) 128px, 160px"
+                            className="object-cover"
+                        />
+                    </motion.div>
+
+                    <div className="hidden md:flex gap-6 items-center pt-4 pr-2">
+                        {socials.map((social) => {
+                            const Icon = social.icon;
+                            return (
+                                <a key={social.name} href={social.url} target="_blank" className="text-zinc-500 hover:text-white transition-colors" rel="noreferrer">
+                                    <Icon size={24} strokeWidth={1.5} />
+                                    <span className="sr-only">{social.name}</span>
+                                </a>
+                            );
+                        })}
+                    </div>
+                </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-2">
