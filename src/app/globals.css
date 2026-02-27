@@ -61,3 +61,186 @@ nextjs-portal,
 #nextjs-build-indicator {
   display: none !important;
 }
+
+@keyframes cuteFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  96%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  98% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes earWiggle {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.animate-cute-float {
+  animation: cuteFloat 4s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 4s infinite;
+  transform-origin: center;
+}
+
+.animate-ear {
+  animation: earWiggle 5s infinite;
+  transform-origin: bottom center;
+}
+
+/* AutoClaw Complex Home Page Card Bot */
+@keyframes cardBotComplex {
+
+  0%,
+  15% {
+    transform: translate(-30px, 30px) scale(0.8) rotate(-10deg);
+    opacity: 1;
+  }
+
+  18%,
+  28% {
+    transform: translate(150%, 150%) scale(0.6) rotate(20deg);
+    opacity: 0;
+  }
+
+  32%,
+  50% {
+    transform: translate(-10px, 30px) scale(0.9) rotate(5deg);
+    opacity: 1;
+  }
+
+  53%,
+  65% {
+    transform: translate(150%, 150%) scale(0.6) rotate(20deg);
+    opacity: 0;
+  }
+
+  70%,
+  85% {
+    transform: translate(-40px, 50px) scale(0.8) rotate(-15deg);
+    opacity: 1;
+  }
+
+  88%,
+  100% {
+    transform: translate(150%, 150%) scale(0.6) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes messageBubblePulse {
+
+  0%,
+  33% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+
+  36%,
+  47% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+}
+
+.animate-card-bot-complex {
+  animation: cardBotComplex 24s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: bottom right;
+}
+
+.animate-message-bubble {
+  animation: messageBubblePulse 24s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  transform-origin: bottom right;
+}
+
+/* AutoClaw Complex Project Page Bot */
+@keyframes pageBotRoam {
+  0% {
+    transform: translate(60vw, 80vh) scale(1.5) rotate(-20deg);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate(50vw, 50vh) scale(2) rotate(15deg);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(10vw, 30vh) scale(1) rotate(-15deg);
+    opacity: 1;
+  }
+
+  45% {
+    transform: translate(70vw, 10vh) scale(1.2) rotate(20deg);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translate(30vw, -10vh) scale(0.8) rotate(-10deg);
+    opacity: 1;
+  }
+
+  75%,
+  100% {
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes titleGradientFadeIn {
+
+  0%,
+  75% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  80%,
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.animate-page-bot-roam {
+  animation: pageBotRoam 12s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-title-gradient-reveal {
+  animation: titleGradientFadeIn 12s ease-out forwards;
+}

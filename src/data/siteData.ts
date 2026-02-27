@@ -76,66 +76,157 @@ export const siteData = {
     ],
     projects: [
         {
+            id: "autoclaw",
+            title: "AutoClaw",
+            category: "Personal",
+            description: "The AI that actually does things. A friendly and relentlessly efficient bot. It finds, evaluates, and applies to jobs entirely on its own.",
+            keyFeatures: [
+                "Autonomous Job Applications: Finds, evaluates, and applies to jobs entirely on its own.",
+                "Natural Chat Interface: Just talk to it like a friend to initiate complex workflows.",
+                "Decision-Making engine: Autonomous decision-making and execution.",
+                "Relentless Agent: Your relentless Personal Agent—COMING SOON."
+            ],
+            whatIBuilt: [
+                "Designed and developed the entire automated agentic workflow designed for relentlessly efficient execution.",
+                "Integrated natural language parsing for intelligent job application and evaluation.",
+                "Developed the initial front-end chat interface allowing easy task delegation."
+            ],
+            techStackDetailed: [
+                "Frontend: React, Next.js",
+                "AI Integration: Agentic Framework",
+                "Deployment: Vercel"
+            ],
+            techStack: ["React", "Next.js", "AI", "Agentic Framework"],
+            whyIBuiltIt: "Just chat with it like a friend, and watch it execute. COMING SOON Your Personal Agent.",
+            images: [
+                {
+                    url: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+                    caption: "AutoClaw's intelligent dashboard managing active job applications."
+                },
+                {
+                    url: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Natural language interface for autonomous task delegation."
+                }
+            ],
+            url: "https://autoclaw-ai.vercel.app/",
+            github: "https://github.com/kr1shnac/AutoClaw",
+            gradient: "from-[#ec4899]/15 via-[#8b5cf6]/15 to-transparent"
+        },
+        {
+            id: "krish-gpt",
+            title: "krish-GPT",
+            category: "Personal",
+            description: "The GPT which can roast you forever. Conversational AI Platform supporting threaded conversations, rich Markdown rendering, and syntax-highlighted code blocks.",
+            keyFeatures: [
+                "Conversational Personality: The GPT which can roast you forever.",
+                "Threaded Conversations: Full support for context-aware conversations powered by OpenAI.",
+                "Advanced Markdown processing: Rich Markdown text rendering including complex tables and formatting.",
+                "Code block native formatting: Integrated syntax highlighting for various programming languages.",
+                "History Sync: Persistent chat history stored securely in MongoDB."
+            ],
+            whatIBuilt: [
+                "Built as a high-performance single-page application using React and Vite, communicating with a custom Express/Node.js backend.",
+                "Integrated MongoDB for persistent storage of conversation histories.",
+                "Implemented the OpenAI API to power the core intelligence engine."
+            ],
+            techStackDetailed: [
+                "Frontend: React, Vite",
+                "Backend: Node.js, Express",
+                "Database: MongoDB",
+                "AI API: OpenAI API"
+            ],
+            techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "OpenAI API"],
+            whyIBuiltIt: "I wanted a conversational AI interface that didn't just feel like a chat window, but a proper workspace. krish-GPT was born from the need to have a seamless, developer-friendly interface that could handle complex code blocks, render markdown effortlessly, and maintain distinct conversation threads.",
+            images: [
+                {
+                    url: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Chat interface maintaining distinct conversation threads and context."
+                },
+                {
+                    url: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Complex code blocks rendered cleanly with syntax highlighting."
+                }
+            ],
+            url: "#",
+            github: "https://github.com/kr1shnac/krish-GPT",
+            gradient: "from-blue-500/15 via-transparent to-transparent"
+        },
+        {
             id: "attendsmart",
             title: "AttendSmart",
             category: "Personal",
             status: "In Progress",
             description: "Proxy-proof offline biometric attendance with Face liveness detection, BLE proximity, and offline SQLite sync.",
-            motivation: "Traditional digital attendance systems are plagued by proxies and network dependency. I built AttendSmart to create a foolproof, offline-first attendance solution that guarantees the physical presence of a student while functioning seamlessly without an internet connection.",
-            architecture: "Engineered a robust hybrid architecture utilizing React Native and Capacitor for mobile, backed by a Node.js/MERN stack. The core innovation lies in the offline-first approach using SQLite for local storage, coupled with an intelligent synchronization service that reconciles data when connectivity is restored.",
-            features: [
-                "ML Kit-powered Face Liveness Detection to prevent photo spoofing.",
-                "Bluetooth Low Energy (BLE) proximity checks to verify physical presence.",
-                "Offline-first architecture utilizing SQLite with automated background sync.",
-                "Comprehensive Role-Based Access Control (Admin, Teacher, Student)."
+            keyFeatures: [
+                "Liveness Checking: ML Kit-powered Face Liveness Detection to prevent photo spoofing.",
+                "BLE Proximity Validation: Bluetooth Low Energy proximity checks to verify physical presence.",
+                "Robust Background Syncing: Offline-first architecture utilizing SQLite with automated background sync.",
+                "Complete RBAC Security: Comprehensive Role-Based Access Control (Admin, Teacher, Student)."
             ],
-            images: [
-                "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=1000", // abstract biometric/tech mobile app view
-                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"  // dashboard code style
+            whatIBuilt: [
+                "Engineered a robust hybrid architecture utilizing React Native and Capacitor for mobile.",
+                "Developed the backend using a Node.js/MERN stack.",
+                "Created the core offline-first approach using SQLite for local storage.",
+                "Integrated an intelligent synchronization service that reconciles data when connectivity is restored."
+            ],
+            techStackDetailed: [
+                "Mobile App: React Native, Capacitor",
+                "Backend: MERN Stack (Node.js, Express, MongoDB)",
+                "ML Integration: Google ML Kit",
+                "Local Storage: SQLite"
             ],
             techStack: ["React Native", "Capacitor", "MERN", "ML Kit", "BLE", "SQLite"],
-            url: "https://github.com/kr1shnac/AttendSmart", // Assuming main repo name
-            gradient: "from-teal-500/15 via-transparent to-transparent"
-        },
-        {
-            id: "talksyai",
-            title: "TalksyAI",
-            category: "Personal",
-            description: "Conversational AI Platform supporting threaded conversations, rich Markdown rendering, and syntax-highlighted code blocks.",
-            motivation: "I wanted a conversational AI interface that didn't just feel like a chat window, but a proper workspace. TalksyAI was born from the need to have a seamless, developer-friendly interface that could handle complex code blocks, render markdown effortlessly, and maintain distinct conversation threads.",
-            architecture: "Built as a high-performance single-page application using React and Vite, communicating with a custom Express/Node.js backend. MongoDB is utilized for persistent storage of conversation histories, while the OpenAI API powers the core intelligence engine.",
-            features: [
-                "Full support for threaded, context-aware conversations powered by OpenAI.",
-                "Rich Markdown text rendering including complex tables and formatting.",
-                "Integrated syntax highlighting for various programming languages in code blocks.",
-                "Persistent chat history stored securely in MongoDB."
-            ],
+            whyIBuiltIt: "Traditional digital attendance systems are plagued by proxies and network dependency. I built AttendSmart to create a foolproof, offline-first attendance solution that guarantees the physical presence of a student while functioning seamlessly without an internet connection.",
             images: [
-                "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000", // ai chat interface visualization
-                "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1000"  // code block rendering placeholder
+                {
+                    url: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Student dashboard verifying presence over BLE and ML Kit liveness checks."
+                },
+                {
+                    url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Teacher administration pane for offline batch attendance synchronization."
+                }
             ],
-            techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "OpenAI API"],
-            url: "https://github.com/kr1shnac/TalksyAI",
-            gradient: "from-blue-500/15 via-transparent to-transparent"
+            url: "#",
+            github: "https://github.com/kr1shnac/AttendSmart",
+            gradient: "from-teal-500/15 via-transparent to-transparent"
         },
         {
             id: "wanderlust",
             title: "Wanderlust",
             category: "Personal",
             description: "Airbnb-Style Listings Platform with Passport.js authentication, Cloudinary uploads, and RESTful routes for listings and reviews.",
-            motivation: "To master the fundamentals of full-stack web development, I challenged myself to build a comprehensive property rental platform. Wanderlust served as the proving ground for implementing complex relational data models and secure authentication flows from scratch.",
-            architecture: "A classic server-rendered MVC architecture using Node.js, Express, and EJS templating. It leverages MongoDB for data storage, integrates Passport.js for robust session-based authentication, and utilizes Cloudinary for optimized image asset management.",
-            features: [
-                "Complete CRUD operations for property listings and user reviews.",
-                "Secure user authentication and authorization utilizing Passport.js.",
-                "Integrated image uploading and hosting via Cloudinary API.",
-                "Interactive maps integration (Mapbox API) for property locations."
+            keyFeatures: [
+                "Platform CRUD operations: Complete creation, reads, updates, and deletes for property listings and user reviews.",
+                "Passport Authorization handling: Secure user authentication and authorization utilizing Passport.js.",
+                "External Media API: Integrated image uploading and hosting via Cloudinary API.",
+                "Geolocation Support: Interactive maps integration (Mapbox API) for property locations."
             ],
-            images: [
-                "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000", // beach house listing view
-                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000"  // modern apartment interior listing
+            whatIBuilt: [
+                "Designed a classic server-rendered MVC architecture using Node.js, Express, and EJS templating.",
+                "Leveraged MongoDB for data storage and managed data relations between users, reviews, and listings.",
+                "Integrated Passport.js for robust session-based authentication.",
+                "Utilized Cloudinary for optimized image asset management."
+            ],
+            techStackDetailed: [
+                "Backend: Node.js, Express",
+                "Templates: EJS",
+                "Database: MongoDB",
+                "Authentication: Passport.js",
+                "Media Storage: Cloudinary API"
             ],
             techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
+            whyIBuiltIt: "To master the fundamentals of full-stack web development, I challenged myself to build a comprehensive property rental platform. Wanderlust served as the proving ground for implementing complex relational data models and secure authentication flows from scratch.",
+            images: [
+                {
+                    url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Main property discovery feed powered by Mapbox integration and dynamic sorting."
+                },
+                {
+                    url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Property detail view where authenticated users can securely leave reviews."
+                }
+            ],
             url: "https://wander1ust.onrender.com",
             gradient: "from-purple-500/15 via-transparent to-transparent"
         },
@@ -144,19 +235,34 @@ export const siteData = {
             title: "SKF Karate",
             category: "Client",
             description: "Built the official website for the SKF Karate Association to enhance their digital presence and member engagement.",
-            motivation: "The SKF Karate Association needed a modern digital storefront to attract new students and provide a central hub for existing members. I stepped in to translate their physical discipline into a compelling online experience.",
-            architecture: "Developed as a statically generated site utilizing Next.js for blazing fast load times and optimal SEO. The UI was crafted with Tailwind CSS for rapid styling and Framer Motion for subtle, engaging micro-interactions.",
-            features: [
-                "Responsive, mobile-first design system.",
-                "Engaging micro-interactions and scroll animations via Framer Motion.",
-                "Optimized asset delivery for fast performance scores.",
-                "Clear calls-to-action for class registration and inquiry."
+            keyFeatures: [
+                "Built for performance targeting: Responsive, mobile-first design system.",
+                "Beautiful Scroll Reveal patterns: Engaging micro-interactions and scroll animations via Framer Motion.",
+                "Image & Asset optimizations: Custom delivery pipeline for fast performance scores.",
+                "Digital Conversion workflows: Clear calls-to-action for class registration and inquiry."
             ],
-            images: [
-                "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=1000", // martial arts gym placeholder
-                "https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&q=80&w=1000"  // karate competition visual 
+            whatIBuilt: [
+                "Developed as a statically generated site utilizing Next.js for blazing fast load times and optimal SEO.",
+                "Crafted the UI with Tailwind CSS for rapid styling.",
+                "Implemented Framer Motion for subtle, engaging micro-interactions."
+            ],
+            techStackDetailed: [
+                "Frontend Platform: Next.js",
+                "Styling: Tailwind CSS",
+                "Animations: Framer Motion"
             ],
             techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
+            whyIBuiltIt: "The SKF Karate Association needed a modern digital storefront to attract new students and provide a central hub for existing members. I stepped in to translate their physical discipline into a compelling online experience.",
+            images: [
+                {
+                    url: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Dynamic landing page drawing new users to view schedules and class tiers."
+                },
+                {
+                    url: "https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Optimized mobile view tailored for on-the-go parent registrations."
+                }
+            ],
             url: "#",
             gradient: "from-red-500/15 via-transparent to-transparent"
         },
@@ -165,19 +271,34 @@ export const siteData = {
             title: "SKF Fee Tracker",
             category: "Client",
             description: "Developed a secure fee tracking application for the SKF Karate Association to manage student payments and records efficiently.",
-            motivation: "Manual fee collection and tracking was becoming a significant administrative bottleneck for the association. They required a streamlined, digital solution to minimize errors, track dues, and generate payment reports.",
-            architecture: "A responsive React application focused on data density and usability. The backend utilizes Node.js to handle secure transactions and aggregate payment data, providing administrators with a clear, reliable dashboard.",
-            features: [
-                "Secure administrative dashboard for tracking student payments.",
-                "Automated fee calculation and due date tracking.",
-                "Searchable and filterable student records.",
-                "Detailed reporting for financial oversight."
+            keyFeatures: [
+                "Dashboard Management UI: Secure administrative dashboard for tracking student payments.",
+                "Custom Automated invoicing: Automated fee calculation and due date tracking.",
+                "Student List Filter engine: Searchable and filterable student records.",
+                "Report Generation logic: Detailed reporting for financial oversight."
             ],
-            images: [
-                "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1000", // finance dashboard overview
-                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" // analytics charts view
+            whatIBuilt: [
+                "Created a responsive React application focused on data density and usability.",
+                "Developed the backend using Node.js to handle secure transactions and aggregate payment data.",
+                "Customized administrative dashboards to provide clear, reliable oversight."
+            ],
+            techStackDetailed: [
+                "Frontend Application: React, Next.js",
+                "Backend Engine: Node.js",
+                "Database: Secure relational SQL DB"
             ],
             techStack: ["Next.js", "React", "Node.js", "Database"],
+            whyIBuiltIt: "Manual fee collection and tracking was becoming a significant administrative bottleneck for the association. They required a streamlined, digital solution to minimize errors, track dues, and generate payment reports.",
+            images: [
+                {
+                    url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Admin dashboard showcasing outstanding dues and filtered payment records."
+                },
+                {
+                    url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+                    caption: "Automated student invoicing and secure transaction tracking interface."
+                }
+            ],
             url: "https://skfkarate.github.io/SKF-FEETRACK/",
             gradient: "from-amber-500/15 via-transparent to-transparent"
         }
