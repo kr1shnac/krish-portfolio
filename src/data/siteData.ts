@@ -1,6 +1,75 @@
-import { Github, Linkedin, Twitter, GraduationCap, BookOpen, Award, Users, Cpu } from "lucide-react";
+import { Github, Linkedin, Twitter, GraduationCap, BookOpen, Award, Users, Cpu, LucideIcon } from "lucide-react";
 
-export const siteData = {
+export interface KeyFeature {
+    text: string;
+    image?: string;
+    caption?: string;
+}
+
+export interface Project {
+    id: string;
+    title: string;
+    category: "Personal" | "Client";
+    description: string;
+    keyFeatures: (string | KeyFeature)[];
+    whatIBuilt: string[];
+    techStackDetailed: string[];
+    techStack: string[];
+    whyIBuiltIt: string;
+    images: { url: string; caption: string; }[];
+    url: string;
+    github?: string;
+    gradient: string;
+    status?: string;
+}
+
+export interface SiteData {
+    personal: {
+        name: string;
+        ageAndLocation: string;
+        role: string;
+        bio: string;
+        email: string;
+        photoUrl: string;
+    };
+    socials: { name: string; url: string; icon: LucideIcon }[];
+    skills: { category: string; items: string[] }[];
+    education: {
+        id: string;
+        degree: string;
+        institution: string;
+        duration: string;
+        score: string;
+        icon: LucideIcon;
+    }[];
+    achievements: {
+        id: string;
+        title: string;
+        organization: string;
+        description: string;
+        icon: LucideIcon;
+        className?: string;
+        link?: string;
+    }[];
+    extracurriculars: {
+        id: string;
+        role: string;
+        organization: string;
+        description: string;
+        image: string;
+    }[];
+    projects: Project[];
+    experience: any[];
+    blogs: {
+        id: string;
+        title: string;
+        description: string;
+        date: string;
+        url: string;
+    }[];
+}
+
+export const siteData: SiteData = {
     personal: {
         name: "Krishna C",
         ageAndLocation: "20, Bangalore",
@@ -110,7 +179,7 @@ export const siteData = {
             ],
             url: "https://autoclaw-ai.vercel.app/",
             github: "https://github.com/kr1shnac/AutoClaw",
-            gradient: "from-[#ec4899]/15 via-[#8b5cf6]/15 to-transparent"
+            gradient: "from-[#ec4899]/15 via-[#8b5cf6]/15 to-transparent",
         },
         {
             id: "krish-gpt",
