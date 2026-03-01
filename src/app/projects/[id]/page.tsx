@@ -74,16 +74,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
             {/* Hero Image */}
             {project.images && project.images.length > 0 && (
-                <div className="w-full relative rounded-xl h-auto overflow-hidden border border-zinc-800 bg-[#111111] mb-12">
-                    <div className="relative w-full aspect-[16/9]">
-                        <Image
-                            src={project.images[0].url}
-                            alt={project.images[0].caption || `${project.title} screenshot`}
-                            fill
-                            className="object-cover"
-                            unoptimized
-                        />
-                    </div>
+                <div className="w-full rounded-xl overflow-hidden border border-zinc-800 bg-[#111111] mb-12">
+                    <Image
+                        src={project.images[0].url}
+                        alt={project.images[0].caption || `${project.title} screenshot`}
+                        width={1920}
+                        height={1080}
+                        className="w-full h-auto"
+                        unoptimized
+                    />
                     {project.images[0].caption && (
                         <p className="mt-4 text-center text-sm text-zinc-500 pb-4">
                             {project.images[0].caption}
@@ -114,45 +113,49 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                             Key Features
                         </h2>
 
-                        <ul className="list-[square] mt-5 ml-5 text-zinc-400 marker:text-zinc-500 space-y-4">
-                            {project.keyFeatures.map((feature: string, idx: number) => {
-                                const [boldPart, ...rest] = feature.includes(":") ? feature.split(":") : [feature, ""];
+                        <div className="mt-5 space-y-8">
+                            {project.keyFeatures.map((feature: any, idx: number) => {
+                                const featureText = typeof feature === "string" ? feature : feature.text;
+                                const featureImage = typeof feature === "object" ? feature.image : null;
+                                const featureCaption = typeof feature === "object" ? feature.caption : null;
+                                const [boldPart, ...rest] = featureText.includes(":") ? featureText.split(":") : [featureText, ""];
                                 return (
-                                    <li key={idx} className="mb-4">
-                                        {rest.length > 0 ? (
-                                            <>
-                                                <strong className="font-bold text-zinc-300">{boldPart}:</strong>
-                                                {rest.join(":")}
-                                            </>
-                                        ) : (
-                                            <>{boldPart}</>
+                                    <div key={idx}>
+                                        <ul className="list-[square] ml-5 text-zinc-400 marker:text-zinc-500">
+                                            <li>
+                                                {rest.length > 0 ? (
+                                                    <>
+                                                        <strong className="font-bold text-zinc-300">{boldPart}:</strong>
+                                                        {rest.join(":")}
+                                                    </>
+                                                ) : (
+                                                    <>{boldPart}</>
+                                                )}
+                                            </li>
+                                        </ul>
+                                        {featureImage && (
+                                            <div className="mt-4 flex flex-col gap-2">
+                                                <div className="relative w-full rounded-xl overflow-hidden border border-zinc-800 bg-[#111111]">
+                                                    <Image
+                                                        src={featureImage}
+                                                        alt={featureCaption || `${project.title} feature screenshot`}
+                                                        width={1920}
+                                                        height={1080}
+                                                        className="w-full h-auto"
+                                                        unoptimized
+                                                    />
+                                                </div>
+                                                {featureCaption && (
+                                                    <p className="text-center text-sm text-zinc-500">
+                                                        {featureCaption}
+                                                    </p>
+                                                )}
+                                            </div>
                                         )}
-                                    </li>
+                                    </div>
                                 );
                             })}
-                        </ul>
-
-                        {/* Following Images Interleaved */}
-                        {project.images && project.images.length > 1 && (
-                            <div className="mt-10">
-                                <div className="flex flex-col gap-2 relative">
-                                    <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-zinc-800 bg-[#111111]">
-                                        <Image
-                                            src={project.images[1].url}
-                                            alt={project.images[1].caption || `${project.title} screenshot`}
-                                            fill
-                                            className="object-cover"
-                                            unoptimized
-                                        />
-                                    </div>
-                                    {project.images[1].caption && (
-                                        <p className="mt-4 text-center text-sm text-zinc-500">
-                                            {project.images[1].caption}
-                                        </p>
-                                    )}
-                                </div>
-                            </div>
-                        )}
+                        </div>
                     </section>
                 )}
 
@@ -209,14 +212,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                         </p>
 
                         {/* Additional Images (if any) */}
-                        {project.images && project.images.length > 2 && (
+                        {project.images && project.images.length > 3 && (
                             <div className="mt-10 flex flex-col gap-10">
-                                {project.images.slice(2).map((img: any, idx: number) => (
+                                {project.images.slice(3).map((img: any, idx: number) => (
                                     <div key={idx} className="flex flex-col gap-2 relative">
                                         <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-zinc-800 bg-[#111111]">
                                             <Image
                                                 src={img.url}
-                                                alt={img.caption || `${project.title} screenshot ${idx + 2}`}
+                                                alt={img.caption || `${project.title} screenshot ${idx + 3}`}
                                                 fill
                                                 className="object-cover"
                                                 unoptimized

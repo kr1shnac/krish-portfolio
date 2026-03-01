@@ -24,7 +24,7 @@ export default function Projects() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
                 <p className="text-zinc-400">
-                    A collection of my work spanning from blockchain applications to full-stack projects, both personal and professional.
+                    I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas on how it can be improved.
                 </p>
             </ScrollReveal>
 

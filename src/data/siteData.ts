@@ -155,7 +155,6 @@ export const siteData = {
             id: "attendsmart",
             title: "AttendSmart",
             category: "Personal",
-            status: "In Progress",
             description: "Proxy-proof offline biometric attendance with Face liveness detection, BLE proximity, and offline SQLite sync.",
             keyFeatures: [
                 "Liveness Checking: ML Kit-powered Face Liveness Detection to prevent photo spoofing.",
@@ -193,41 +192,48 @@ export const siteData = {
         },
         {
             id: "wanderlust",
-            title: "Wanderlust",
+            title: "Wander1ust",
             category: "Personal",
-            description: "Airbnb-Style Listings Platform with Passport.js authentication, Cloudinary uploads, and RESTful routes for listings and reviews.",
+            description: "An Airbnb-style platform for discovering and sharing unique property listings. Built as a hands-on learning project, it showcases full-stack capabilities including secure authentication, cloud image uploads, and community-driven reviews.",
             keyFeatures: [
-                "Platform CRUD operations: Complete creation, reads, updates, and deletes for property listings and user reviews.",
-                "Passport Authorization handling: Secure user authentication and authorization utilizing Passport.js.",
-                "External Media API: Integrated image uploading and hosting via Cloudinary API.",
-                "Geolocation Support: Interactive maps integration (Mapbox API) for property locations."
-            ],
-            whatIBuilt: [
-                "Designed a classic server-rendered MVC architecture using Node.js, Express, and EJS templating.",
-                "Leveraged MongoDB for data storage and managed data relations between users, reviews, and listings.",
-                "Integrated Passport.js for robust session-based authentication.",
-                "Utilized Cloudinary for optimized image asset management."
-            ],
-            techStackDetailed: [
-                "Backend: Node.js, Express",
-                "Templates: EJS",
-                "Database: MongoDB",
-                "Authentication: Passport.js",
-                "Media Storage: Cloudinary API"
-            ],
-            techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
-            whyIBuiltIt: "To master the fundamentals of full-stack web development, I challenged myself to build a comprehensive property rental platform. Wanderlust served as the proving ground for implementing complex relational data models and secure authentication flows from scratch.",
-            images: [
                 {
-                    url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1000",
-                    caption: "Main property discovery feed powered by Mapbox integration and dynamic sorting."
+                    text: "Property Exploration: Browse through a diverse catalog of unique property listings."
                 },
                 {
-                    url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=1000",
-                    caption: "Property detail view where authenticated users can securely leave reviews."
+                    text: "Listing Creation & Image Uploads: Securely add properties and upload photos directly to the cloud via Cloudinary.",
+                    image: "/projects/wanderlust/Create New Listing form.png",
+                    caption: "Hosts can add new properties with details such as title, description, and pricing — photos are uploaded directly to Cloudinary."
+                },
+                {
+                    text: "Community Reviews & Authorization: Guests can leave ratings and detailed reviews on properties. Robust authorization logic ensures users can only edit or delete their own listings and reviews, preventing unauthorized modifications.",
+                    image: "/projects/wanderlust/Property detail page with reviews.png",
+                    caption: "Each listing's detail page displays community reviews, with edit and delete controls scoped only to the review author."
+                },
+                {
+                    text: "Secure Authentication: Persistent session-based login and signup powered by Passport.js."
+                }
+            ],
+            whatIBuilt: [
+                "Wander1ust follows the MVC pattern for a clean separation of concerns.",
+                "A Node.js/Express server manages APIs, secure user sessions via Passport.js, and complex data relationships in MongoDB.",
+                "A responsive EJS and Bootstrap 5 interface with Joi for strict client-side validation.",
+                "Integrated Cloudinary for optimized cloud image uploading and hosting."
+            ],
+            techStackDetailed: [
+                "Frontend: EJS, Bootstrap 5, Joi",
+                "Backend: Node.js, Express.js, MongoDB (Mongoose)",
+                "Tools & Integrations: Cloudinary, Passport.js, Vercel"
+            ],
+            techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
+            whyIBuiltIt: "Wander1ust was developed primarily as a sandbox to master real-world backend complexities. It allowed me to transition from simple apps to successfully implementing secure session-based authentication, integrating cloud media storage, and managing complex relational data in a NoSQL database.",
+            images: [
+                {
+                    url: "/projects/wanderlust/Main listings catalog.png",
+                    caption: "Main listings catalog — browse through a diverse catalog of unique property listings."
                 }
             ],
             url: "https://wander1ust.onrender.com",
+            github: "https://github.com/kr1shnac/Wander1ust",
             gradient: "from-purple-500/15 via-transparent to-transparent"
         },
         {
