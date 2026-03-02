@@ -31,6 +31,7 @@ export interface SiteData {
         bio: string;
         email: string;
         photoUrl: string;
+        resumeUrl: string;
     };
     socials: { name: string; url: string; icon: LucideIcon }[];
     skills: { category: string; items: string[] }[];
@@ -77,6 +78,7 @@ export const siteData: SiteData = {
         bio: "I'm an AI & ML Engineering student profoundly interested in bridging the gap between cutting-edge AI and practical, robust engineering. Whether I'm building proxy-proof biometric systems like AttendSmart or scalable conversational AI platforms like TalksyAI, I focus on solving deeply technical challenges that require a blend of intelligent algorithms and full-stack MERN expertise. My goal is to build technology that doesn't just work on paper, but solves real-world problems reliably at scale.",
         email: "krishnacgowda10@gmail.com",
         photoUrl: "/myprofile.PNG",
+        resumeUrl: "/Krishna Resume.pdf",
     },
     socials: [
         { name: "GitHub", url: "https://github.com/kr1shnac", icon: Github },
@@ -182,8 +184,8 @@ export const siteData: SiteData = {
             gradient: "from-[#ec4899]/15 via-[#8b5cf6]/15 to-transparent",
         },
         {
-            id: "krish-gpt",
-            title: "krish-GPT",
+            id: "hellflame-gpt",
+            title: "HellFlame-GPT",
             category: "Personal",
             description: "The GPT which can roast you forever. Conversational AI Platform supporting threaded conversations, rich Markdown rendering, and syntax-highlighted code blocks.",
             keyFeatures: [
@@ -205,7 +207,7 @@ export const siteData: SiteData = {
                 "AI API: OpenAI API"
             ],
             techStack: ["React", "Vite", "Node.js", "Express", "MongoDB", "OpenAI API"],
-            whyIBuiltIt: "I wanted a conversational AI interface that didn't just feel like a chat window, but a proper workspace. krish-GPT was born from the need to have a seamless, developer-friendly interface that could handle complex code blocks, render markdown effortlessly, and maintain distinct conversation threads.",
+            whyIBuiltIt: "I wanted a conversational AI interface that didn't just feel like a chat window, but a proper workspace. HellFlame-GPT was born from the need to have a seamless, developer-friendly interface that could handle complex code blocks, render markdown effortlessly, and maintain distinct conversation threads.",
             images: [
                 {
                     url: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
@@ -263,45 +265,54 @@ export const siteData: SiteData = {
             id: "wanderlust",
             title: "Wander1ust",
             category: "Personal",
-            description: "An Airbnb-style platform for discovering and sharing unique property listings. Built as a hands-on learning project, it showcases full-stack capabilities including secure authentication, cloud image uploads, and community-driven reviews.",
+            description: "A full-stack Airbnb-inspired platform with authentication, cloud storage, reviews, and dynamic search — built end-to-end with Node.js and MVC architecture.",
             keyFeatures: [
                 {
-                    text: "Property Exploration: Browse through a diverse catalog of unique property listings."
+                    text: "Dynamic Property Discovery: Browse a diverse catalog of listings with a regex-powered search engine that queries across titles, locations, and countries for instant, relevant results."
                 },
                 {
-                    text: "Listing Creation & Image Uploads: Securely add properties and upload photos directly to the cloud via Cloudinary.",
+                    text: "Listing Creation & Cloud Image Uploads: Hosts can create detailed property listings and upload high-resolution photos directly to Cloudinary, with dynamic image transformations for optimized thumbnail previews.",
                     image: "/projects/wanderlust/Create New Listing form.png",
-                    caption: "Hosts can add new properties with details such as title, description, and pricing — photos are uploaded directly to Cloudinary."
+                    caption: "\"Create New Listing\" form with image upload"
                 },
                 {
-                    text: "Community Reviews & Authorization: Guests can leave ratings and detailed reviews on properties. Robust authorization logic ensures users can only edit or delete their own listings and reviews, preventing unauthorized modifications.",
+                    text: "Community Reviews & Ratings: Guests can leave detailed reviews and ratings on any property. Cascading deletion hooks automatically clean up associated reviews when a listing is removed, maintaining referential integrity.",
                     image: "/projects/wanderlust/Property detail page with reviews.png",
-                    caption: "Each listing's detail page displays community reviews, with edit and delete controls scoped only to the review author."
+                    caption: "Property detail page with reviews section"
                 },
                 {
-                    text: "Secure Authentication: Persistent session-based login and signup powered by Passport.js."
+                    text: "Secure Authentication & Session Management: Persistent login/signup powered by Passport.js with sessions stored securely in MongoDB via connect-mongo, ensuring reliable user state across requests."
+                },
+                {
+                    text: "Multi-Level Authorization: Robust ownership & authorship verification middleware ensures users can only modify their own listings and reviews, preventing any unauthorized data manipulation."
                 }
             ],
             whatIBuilt: [
-                "Wander1ust follows the MVC pattern for a clean separation of concerns.",
-                "A Node.js/Express server manages APIs, secure user sessions via Passport.js, and complex data relationships in MongoDB.",
-                "A responsive EJS and Bootstrap 5 interface with Joi for strict client-side validation.",
-                "Integrated Cloudinary for optimized cloud image uploading and hosting."
+                "Follows the MVC (Model-View-Controller) pattern for a clean separation of concerns.",
+                "Models: Mongoose schemas with relational references (User ↔ Listing ↔ Review) and post-delete hooks for cascading cleanup.",
+                "Controllers: Modular route handlers for listings, reviews, and user authentication — each in its own file.",
+                "Views: Server-rendered EJS templates with ejs-mate layouts and Bootstrap 5 for a responsive, polished UI.",
+                "Middleware: Custom layers for authentication checks, ownership verification, redirect URL persistence, and Joi schema validation.",
+                "Cloud Integration: Multer + Cloudinary pipeline for seamless image upload and storage."
             ],
             techStackDetailed: [
-                "Frontend: EJS, Bootstrap 5, Joi",
-                "Backend: Node.js, Express.js, MongoDB (Mongoose)",
-                "Tools & Integrations: Cloudinary, Passport.js, Vercel"
+                "Backend: Node.js, Express.js (v5), Mongoose ODM",
+                "Database: MongoDB Atlas",
+                "Authentication: Passport.js, express-session, connect-mongo",
+                "Cloud Storage: Cloudinary, multer-storage-cloudinary",
+                "Frontend: EJS, ejs-mate, Bootstrap 5",
+                "Validation: Joi (client + server)",
+                "Deployment: Vercel"
             ],
-            techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js", "Cloudinary"],
-            whyIBuiltIt: "Wander1ust was developed primarily as a sandbox to master real-world backend complexities. It allowed me to transition from simple apps to successfully implementing secure session-based authentication, integrating cloud media storage, and managing complex relational data in a NoSQL database.",
+            techStack: ["Node.js", "Express.js", "MongoDB", "Passport.js", "Cloudinary", "EJS", "Bootstrap 5"],
+            whyIBuiltIt: "Wander1ust was developed as a hands-on project to master real-world backend complexities. It pushed me beyond simple CRUD apps into implementing secure session-based authentication, integrating cloud media storage pipelines, managing complex relational data in a NoSQL database, and designing multi-layered authorization logic — skills that directly translate to production-grade development.",
             images: [
                 {
                     url: "/projects/wanderlust/Main listings catalog.png",
-                    caption: "Main listings catalog — browse through a diverse catalog of unique property listings."
+                    caption: "Main listings page with search bar"
                 }
             ],
-            url: "https://wander1ust.onrender.com",
+            url: "https://wander1ust.vercel.app",
             github: "https://github.com/kr1shnac/Wander1ust",
             gradient: "from-purple-500/15 via-transparent to-transparent"
         },

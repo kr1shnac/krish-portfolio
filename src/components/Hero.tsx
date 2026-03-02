@@ -5,7 +5,7 @@ import { siteData } from "@/data/siteData";
 import Image from "next/image";
 import { ScrollReveal } from "./ScrollReveal";
 import { useState } from "react";
-import { X } from "lucide-react";
+import { X, FileText } from "lucide-react";
 
 export default function Hero() {
     const { personal, socials } = siteData;
@@ -97,6 +97,20 @@ export default function Hero() {
                 <p className="text-zinc-300 leading-relaxed max-w-2xl text-base md:text-lg">
                     {personal.bio}
                 </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.5}>
+                <motion.a
+                    href={personal.resumeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center gap-2.5 mt-2 px-6 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-white font-semibold text-sm tracking-wide backdrop-blur-sm hover:bg-white/[0.12] hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 w-fit"
+                    whileHover={{ scale: 1.03, y: -1 }}
+                    whileTap={{ scale: 0.97 }}
+                >
+                    <FileText size={18} strokeWidth={1.8} className="text-blue-400 group-hover:text-blue-300 transition-colors" />
+                    Resume
+                    <span className="text-zinc-500 text-xs font-normal group-hover:text-zinc-400 transition-colors">↗</span>
+                </motion.a>
             </ScrollReveal>
         </section>
     );

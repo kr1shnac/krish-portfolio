@@ -4,7 +4,7 @@ import Projects from "@/components/Projects";
 import Achievements from "@/components/Achievements";
 import Education from "@/components/Education";
 import Extracurriculars from "@/components/Extracurriculars";
-import Blogs from "@/components/Blogs";
+// import Blogs from "@/components/Blogs";
 import { TracingBeamWrapper } from "@/components/TracingBeamWrapper";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
           <Education />
           <Extracurriculars />
           <Experience />
-          <Blogs />
+          {/* <Blogs /> */}
         </div>
       </TracingBeamWrapper>
     </div>
