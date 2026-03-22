@@ -150,25 +150,28 @@ export const siteData: SiteData = {
             id: "autoclaw",
             title: "AutoClaw",
             category: "Personal",
-            description: "The AI that actually does things. A friendly and relentlessly efficient bot. It finds, evaluates, and applies to jobs entirely on its own.",
+            description: "Apply smarter, not just faster. An autonomous AI agent that thinks through every application, tailoring your resume and submitting to top job boards entirely on its own.",
             keyFeatures: [
                 "Autonomous Job Applications: Finds, evaluates, and applies to jobs entirely on its own.",
-                "Natural Chat Interface: Just talk to it like a friend to initiate complex workflows.",
-                "Decision-Making engine: Autonomous decision-making and execution.",
-                "Relentless Agent: Your relentless Personal Agent—COMING SOON."
+                "Gemini 2.0 Vision: Uses cutting-edge AI to understand and navigate job portals.",
+                "Playwright Automation: Industry-standard web automation for reliable submissions.",
+                "Resume Tailoring: Thinks through every application and customizes your resume for the best fit."
             ],
             whatIBuilt: [
-                "Designed and developed the entire automated agentic workflow designed for relentlessly efficient execution.",
-                "Integrated natural language parsing for intelligent job application and evaluation.",
-                "Developed the initial front-end chat interface allowing easy task delegation."
+                "Built a high-performance backend using FastAPI and Python for agentic logic.",
+                "Implemented Playwright scripts for robust, autonomous web interaction and submission.",
+                "Leveraged Gemini 2.0 Vision to create an agent that can 'see' and reason about web pages.",
+                "Developed a Next.js 14 frontend for real-time monitoring and task delegation."
             ],
             techStackDetailed: [
-                "Frontend: React, Next.js",
-                "AI Integration: Agentic Framework",
-                "Deployment: Vercel"
+                "Frontend: Next.js 14",
+                "Backend: FastAPI (Python)",
+                "Automation: Playwright",
+                "AI Engine: Gemini 2.0 Vision",
+                "Database: PostgreSQL"
             ],
-            techStack: ["React", "Next.js", "AI", "Agentic Framework"],
-            whyIBuiltIt: "Just chat with it like a friend, and watch it execute. COMING SOON Your Personal Agent.",
+            techStack: ["Next.js 14", "FastAPI", "Python", "Playwright", "Gemini 2.0 Vision", "PostgreSQL"],
+            whyIBuiltIt: "Applying for jobs is a full-time job in itself. I built AutoClaw to level the playing field, creating an agent that doesn't just spam applications but actually thinks through each one, tailoring the approach for maximum success.",
             images: [
                 {
                     url: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
@@ -218,7 +221,7 @@ export const siteData: SiteData = {
                     caption: "Complex code blocks rendered cleanly with syntax highlighting."
                 }
             ],
-            url: "#",
+            url: "https://hellflame-gpt.vercel.app/",
             github: "https://github.com/kr1shnac/krish-GPT",
             gradient: "from-blue-500/15 via-transparent to-transparent"
         },

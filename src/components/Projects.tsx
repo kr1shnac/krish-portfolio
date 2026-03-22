@@ -107,8 +107,8 @@ export default function Projects() {
                                     key={project.id}
                                     delay={0.1 + index * 0.1}
                                 >
-                                    {project.id === "autoclaw" ? (
-                                        <a href={project.url !== "#" ? project.url : undefined} target="_blank" rel="noopener noreferrer" className="block h-full group/card">
+                                    {(["autoclaw", "hellflame-gpt"].includes(project.id) && project.url !== "#") ? (
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full group/card">
                                             {cardContent}
                                         </a>
                                     ) : (
