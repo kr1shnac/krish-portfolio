@@ -12,6 +12,12 @@
   --foreground: #ededed;
 }
 
+@layer base {
+  html {
+    font-size: 120%;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -243,4 +249,13 @@ nextjs-portal,
 
 .animate-title-gradient-reveal {
   animation: titleGradientFadeIn 12s ease-out forwards;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
