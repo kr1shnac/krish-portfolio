@@ -1,54 +1,68 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { ScrollReveal } from "./ScrollReveal";
 import { siteData } from "@/data/siteData";
+import { ArrowUpDown } from "lucide-react";
 
-interface SkillGroup {
-    category: string;
-    items: string[];
-}
+// High-signal skills for the default view
+const featuredSkills = [
+    "TypeScript", "Python", "Next.js", "React", "Node.js",
+    "Express.js", "Supabase", "PostgreSQL", "MongoDB",
+    "Redis", "Prisma", "Tailwind CSS",
+    "System Design", "Agentic Workflows", "LLM Integration", "Memory Systems",
+];
 
 export default function Skills() {
     const { skills } = siteData;
-
-    if (!skills || skills.length === 0) return null;
+    const [grouped, setGrouped] = useState(false);
 
     return (
-        <section className="flex flex-col gap-6">
-            <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="text-2xl font-bold tracking-tight text-white mb-2"
-            >
-                Skills
-            </motion.h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {skills.map((skillGroup: SkillGroup, index: number) => (
-                    <motion.div
-                        key={skillGroup.category}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex flex-col gap-3 p-5 rounded-2xl bg-[#0A0A0A] border border-white/5 hover:border-white/10 transition-colors"
+        <section id="skills" className="flex flex-col gap-y-3">
+            <ScrollReveal>
+                <div className="flex items-center gap-3 mb-1">
+                    <h2 className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">Skills</h2>
+                    <button
+                        onClick={() => setGrouped(!grouped)}
+                        className={`text-zinc-500 hover:text-white transition-colors p-1 rounded ${grouped ? 'text-white' : ''}`}
+                        title={grouped ? "Show all" : "Sort by category"}
                     >
-                        <h3 className="text-white font-medium">{skillGroup.category}</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {skillGroup.items.map((item: string) => (
-                                <span
-                                    key={item}
-                                    className="px-2.5 py-1 text-xs font-medium text-zinc-400 bg-white/5 border border-white/5 rounded-md"
-                                >
-                                    {item}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+                        <ArrowUpDown className="w-3.5 h-3.5" />
+                    </button>
+                </div>
+            </ScrollReveal>
+
+            {grouped ? (
+                <div className="space-y-4">
+                    {skills.map((group, groupIndex) => (
+                        <ScrollReveal key={group.category} delay={0.05 + groupIndex * 0.05}>
+                            <div className="space-y-2">
+                                <span className="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">{group.category}</span>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {group.items.map((skill) => (
+                                        <div
+                                            key={skill}
+                                            className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-all duration-300 focus:outline-none border-transparent bg-white text-black shadow hover:bg-black hover:text-white hover:border-blue-500/50 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 cursor-default"
+                                        >
+                                            {skill}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    ))}
+                </div>
+            ) : (
+                <div className="flex flex-wrap gap-1.5">
+                    {featuredSkills.map((skill, index) => (
+                        <ScrollReveal key={skill} delay={0.05 + index * 0.02}>
+                            <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-all duration-300 focus:outline-none border-transparent bg-white text-black shadow hover:bg-black hover:text-white hover:border-blue-500/50 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 cursor-default">
+                                {skill}
+                            </div>
+                        </ScrollReveal>
+                    ))}
+                </div>
+            )}
         </section>
     );
 }

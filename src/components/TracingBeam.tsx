@@ -51,7 +51,7 @@ export const TracingBeam = ({ children }: { children: React.ReactNode }) => {
             ref={ref}
             className="relative w-full max-w-4xl mx-auto h-full"
         >
-            <div className="absolute right-2 sm:right-4 md:right-auto md:-left-16 top-3">
+            <div className="absolute -right-6 sm:-right-6 md:right-auto md:-left-16 top-3 transform scale-75 md:scale-100 origin-right">
                 <motion.div
                     transition={{
                         duration: 0.2,
@@ -63,7 +63,7 @@ export const TracingBeam = ({ children }: { children: React.ReactNode }) => {
                                 ? "none"
                                 : "rgba(0, 207, 146, 0.35) 0px 3px 12px",
                     }}
-                    className="ml-[27px] h-4 w-4 rounded-full border border-neutral-300 shadow-sm flex items-center justify-center"
+                    className="relative z-10 ml-[18px] h-4 w-4 rounded-full border border-neutral-300 shadow-sm flex items-center justify-center"
                 >
                     <motion.div
                         transition={{
@@ -81,11 +81,11 @@ export const TracingBeam = ({ children }: { children: React.ReactNode }) => {
                     viewBox={`0 0 20 ${svgHeight}`}
                     width="20"
                     height={svgHeight}
-                    className="ml-4 block"
+                    className="ml-4 block -mt-2"
                     aria-hidden="true"
                 >
                     <motion.path
-                        d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
+                        d={`M 10 0 V ${svgHeight}`}
                         fill="none"
                         stroke="#9091A0"
                         strokeOpacity="0.16"
@@ -94,7 +94,7 @@ export const TracingBeam = ({ children }: { children: React.ReactNode }) => {
                         }}
                     />
                     <motion.path
-                        d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
+                        d={`M 10 0 V ${svgHeight}`}
                         fill="none"
                         stroke="url(#gradient)"
                         strokeWidth="1.25"
@@ -119,7 +119,7 @@ export const TracingBeam = ({ children }: { children: React.ReactNode }) => {
                     </defs>
                 </svg>
             </div>
-            <div ref={contentRef} className="pr-14 sm:pr-16 md:pr-0">
+            <div ref={contentRef} className="pr-1 sm:pr-2 md:pr-0">
                 {children}
             </div>
         </motion.div>
