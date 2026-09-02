@@ -1,134 +1,84 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { ScrollReveal } from "./ScrollReveal";
+import { Globe, Github, Package, Cpu } from "lucide-react";
 
 import { siteData } from "@/data/siteData";
-import { ArrowUpRight } from "lucide-react";
-import { ScrollReveal } from "./ScrollReveal";
-import { AutoClawBot } from "./AutoClawBot";
 
 export default function Projects() {
-    const { projects } = siteData;
-    const [activeTab, setActiveTab] = useState<"Personal" | "Client">("Personal");
-
-    const filteredProjects = projects.filter(p => p.category === activeTab);
-
+    const { compactProjects } = siteData;
     return (
-        <section className="flex flex-col gap-4">
-            <ScrollReveal>
-                <h2 className="text-2xl font-bold tracking-tight text-blue-400">
-                    Projects
-                </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-                <p className="text-zinc-400">
-                    I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas on how it can be improved.
-                </p>
-            </ScrollReveal>
-
-            {/* Tabs */}
-            <ScrollReveal delay={0.2} className="flex p-1 rounded-xl bg-[#111111] border border-white/5 w-full mt-4">
-                <button
-                    onClick={() => setActiveTab("Personal")}
-                    className={`flex-1 py-3 text-sm font-medium rounded-lg transition-all ${activeTab === "Personal" ? "bg-[#1A1A1A] text-white shadow-sm border border-white/10" : "text-zinc-400 hover:text-white"}`}
-                >
-                    Personal Projects
-                </button>
-                <button
-                    onClick={() => setActiveTab("Client")}
-                    className={`flex-1 py-3 text-sm font-medium rounded-lg transition-all ${activeTab === "Client" ? "bg-[#1A1A1A] text-white shadow-sm border border-white/10" : "text-zinc-400 hover:text-white"}`}
-                >
-                    Client Work
-                </button>
-            </ScrollReveal>
-
-            {/* Projects Grid */}
-            <div className="grid grid-cols-1 gap-4 mt-4">
-                <AnimatePresence mode="popLayout">
-                    {filteredProjects.length > 0 ? (
-                        filteredProjects.map((project, index) => {
-                            const cardContent = (
-                                <div className="relative h-full">
-                                    <motion.div
-                                        className="flex flex-col h-full gap-4 p-6 rounded-xl bg-[#111111] border border-white/5 hover:border-white/[0.12] transition-colors duration-300 group relative overflow-hidden cursor-pointer z-10"
-                                    >
-                                        <div className={`absolute inset-0 opacity-100 md:opacity-0 group-hover:opacity-100 bg-gradient-to-tr ${project.gradient} transition-opacity duration-500`} />
-
-                                        {/* AutoClaw Eventful Bot Animation */}
-                                        {project.id === "autoclaw" && (
-                                            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden rounded-xl">
-                                                <div className="absolute top-[-20px] right-[-20px] animate-card-bot-complex">
-                                                    <AutoClawBot className="scale-[0.8]" />
-                                                    {/* Sneaky Message Bubble */}
-                                                    <div className="absolute top-10 left-[-40px] bg-[#1e293b] border border-white/10 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-lg animate-message-bubble whitespace-nowrap">
-                                                        Hi there! 👋<br />Click me!
-                                                        <div className="absolute bottom-[-5px] right-4 w-2.5 h-2.5 bg-[#1e293b] border-b border-r border-white/10 rotate-45"></div>
-                                                    </div>
+        <section id="projects" className="mt-8 sm:mt-0">
+            <div className="space-y-6 w-full">
+                <ScrollReveal>
+                    <div className="flex flex-col items-center justify-center space-y-3 text-center">
+                        <div className="space-y-2">
+                            <div className="inline-block rounded-lg bg-white text-black px-3 py-1 text-sm font-medium">My Projects</div>
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60 pb-1">Check out my latest work</h2>
+                            <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-[600px] mx-auto mt-2">
+                                I've worked on a variety of projects, from AI agents to workflow automation platforms. Here are a few of my favorites.
+                            </p>
+                        </div>
+                    </div>
+                </ScrollReveal>
+                <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 w-full">
+                    {compactProjects.map((project, i) => (
+                        <ScrollReveal key={project.id} delay={0.1 + (i * 0.1)}>
+                            <div className="rounded-xl bg-transparent border border-white/10 flex flex-col overflow-hidden hover:shadow-lg transition-all duration-300 ease-out h-full hover:border-white/20 relative group">
+                                {project.websiteUrl ? (
+                                    <a className="block cursor-pointer absolute inset-0 z-0" href={project.websiteUrl} target="_blank" rel="noreferrer"></a>
+                                ) : (
+                                    <a className="block cursor-pointer absolute inset-0 z-0" href={project.sourceUrl} target="_blank" rel="noreferrer"></a>
+                                )}
+                                <div className="flex flex-col px-4 pt-3 sm:pt-4 relative z-10 pointer-events-none">
+                                    <div className="space-y-1">
+                                        <h3 className="font-semibold tracking-tight mt-1 text-sm sm:text-base bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-400">{project.title}</h3>
+                                        <div className="prose max-w-full text-pretty font-sans text-[11px] sm:text-xs text-zinc-400">
+                                            <p>{project.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="text-pretty font-sans text-sm text-zinc-400 mt-auto flex flex-col px-4 relative z-10 pointer-events-none">
+                                    <div className="mt-4 flex flex-wrap gap-1">
+                                        {project.techStack.map(tech => (
+                                            <div key={tech} className="inline-flex items-center rounded-md border border-transparent font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-white/5 text-zinc-300 hover:bg-white/10 px-1 py-0 text-[10px]">
+                                                {tech}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="flex items-center p-4 relative z-20">
+                                    <div className="flex flex-row flex-wrap items-start gap-2.5 sm:gap-3">
+                                        {project.websiteUrl && (
+                                            <a target="_blank" href={project.websiteUrl} rel="noreferrer" className="z-20">
+                                                <div className="items-center rounded-md border border-transparent font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-white text-black shadow hover:bg-white/80 flex gap-1.5 px-2 py-1 text-[10px]">
+                                                    <Globe className="w-3 h-3" />
+                                                    Website
+                                                </div>
+                                            </a>
+                                        )}
+                                        {project.sourceUrl && (
+                                            <a target="_blank" href={project.sourceUrl} rel="noreferrer" className="z-20">
+                                                <div className="items-center rounded-md border border-transparent font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 bg-white text-black shadow hover:bg-white/80 flex gap-1.5 px-2 py-1 text-[10px]">
+                                                    <Github className="w-3 h-3" />
+                                                    Source
+                                                </div>
+                                            </a>
+                                        )}
+                                        {project.wipBadge && (
+                                            <div className="z-20">
+                                                <div className="items-center rounded-md border border-amber-500/20 font-semibold bg-amber-500/10 text-amber-400/80 flex gap-1.5 px-2 py-1 text-[10px] cursor-not-allowed">
+                                                    {project.wipBadge.label === "Package" ? <Package className="w-3 h-3" /> : <Cpu className="w-3 h-3" />}
+                                                    {project.wipBadge.label} · {project.wipBadge.status}
                                                 </div>
                                             </div>
                                         )}
-
-                                        <div className="flex justify-between items-start relative z-10">
-                                            <h3
-                                                className="text-xl font-semibold text-white transition-colors flex items-center gap-2 group-hover:text-white"
-                                            >
-                                                {project.title}
-                                                <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                            </h3>
-                                            {project.status && (
-                                                <span className="px-2.5 py-1 text-xs font-medium text-blue-400 bg-blue-500/10 rounded-md">
-                                                    {project.status}
-                                                </span>
-                                            )}
-                                        </div>
-                                        <p
-                                            className={`text-sm text-zinc-400/90 flex-grow relative z-10 leading-relaxed ${project.id === "autoclaw" ? "max-w-[calc(100%-100px)]" : "max-w-3xl"}`}
-                                        >
-                                            {project.description}
-                                        </p>
-                                        <div className="flex flex-wrap gap-2 mt-4 relative z-10 w-[calc(100%-100px)]">
-                                            {project.techStack.map(tech => (
-                                                <span
-                                                    key={tech}
-                                                    className="px-2.5 py-1.5 text-xs font-medium text-zinc-300 bg-[#1A1A1A] rounded-md"
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </motion.div>
+                                    </div>
                                 </div>
-                            );
-
-                            return (
-                                <ScrollReveal
-                                    key={project.id}
-                                    delay={0.1 + index * 0.1}
-                                >
-                                    {(["autoclaw", "hellflame-gpt"].includes(project.id) && project.url !== "#") ? (
-                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full group/card">
-                                            {cardContent}
-                                        </a>
-                                    ) : (
-                                        <Link href={`/projects/${project.id}`} className="block h-full group/card">
-                                            {cardContent}
-                                        </Link>
-                                    )}
-                                </ScrollReveal>
-                            );
-                        })
-                    ) : (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="col-span-full py-12 text-center text-zinc-500"
-                        >
-                            No projects available
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                            </div>
+                        </ScrollReveal>
+                    ))}
+                </div>
             </div>
         </section>
     );
