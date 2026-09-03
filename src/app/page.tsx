@@ -8,12 +8,27 @@ import Achievements from "@/components/Achievements";
 import BeyondKeyboard from "@/components/BeyondKeyboard";
 import { TracingBeamWrapper } from "@/components/TracingBeamWrapper";
 
+import { siteData } from "@/data/siteData";
+import { FileText } from "lucide-react";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-8 sm:gap-10">
       <Hero />
       <TracingBeamWrapper>
         <div className="flex flex-col gap-12 sm:gap-20 pt-8">
+          
+          <div className="flex justify-start -mb-4 sm:-mb-10">
+            <a 
+                href={siteData.personal.resumeUrl}
+                target="_blank"
+                className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium text-zinc-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white hover:border-white/20 transition-all shadow-sm"
+            >
+                <FileText className="w-3.5 h-3.5" />
+                Download Resume
+            </a>
+          </div>
+
           <Experience />
           <Skills />
           <Projects />

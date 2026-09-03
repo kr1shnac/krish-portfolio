@@ -2,7 +2,7 @@
 
 import { siteData } from "@/data/siteData";
 import { ScrollReveal } from "./ScrollReveal";
-import { Mail, FileText } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Hero() {
     const { personal } = siteData;
@@ -22,23 +22,10 @@ export default function Hero() {
                         </span>
                     </ScrollReveal>
                     <ScrollReveal delay={0.3}>
-                        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-6">
-                            <a 
-                                className="inline-flex items-center gap-2 text-sm font-medium bg-white text-black px-6 py-2.5 rounded-full hover:bg-white/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]" 
-                                href={personal.resumeUrl} 
-                                target="_blank"
-                            >
-                                <FileText className="w-4 h-4" />
-                                View Resume
-                            </a>
-                            <a 
-                                className="inline-flex items-center gap-2 text-sm font-medium text-zinc-300 bg-white/5 border border-white/10 px-6 py-2.5 rounded-full hover:bg-white/10 hover:text-white hover:scale-105 transition-all" 
-                                href={`mailto:${personal.email}`}
-                            >
-                                <Mail className="w-4 h-4" />
-                                Email Me
-                            </a>
-                        </div>
+                        <a className="inline-flex items-center justify-center sm:justify-start gap-2 text-sm font-medium text-white hover:underline transition-all mt-2" href={`mailto:${personal.email}`}>
+                            <Mail className="w-4 h-4" />
+                            {personal.email}
+                        </a>
                     </ScrollReveal>
                 </div>
             </div>
