@@ -18,14 +18,14 @@ export default function Home() {
       <TracingBeamWrapper>
         <div className="flex flex-col gap-12 sm:gap-20 pt-8">
           
-          <div className="flex justify-start -mb-4 sm:-mb-10">
+          <div className="flex sm:hidden justify-start -mb-4">
             <a 
                 href={siteData.personal.resumeUrl}
                 target="_blank"
-                className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium text-zinc-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white hover:border-white/20 transition-all shadow-sm"
+                className="inline-flex items-center gap-1.5 text-[11px] font-medium text-zinc-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white hover:border-white/20 transition-all shadow-sm"
             >
                 <FileText className="w-3.5 h-3.5" />
-                Download Resume
+                New Resume
             </a>
           </div>
 
