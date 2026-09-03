@@ -44,14 +44,14 @@ export default function Hero() {
                             href={personal.resumeUrl}
                             target="_blank"
                             className="inline-flex items-center gap-1.5 text-[11px] font-medium text-zinc-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white hover:border-white/20 transition-all shadow-sm"
-                            initial={{ backgroundColor: "rgba(255, 255, 255, 0.05)", borderColor: "rgba(255, 255, 255, 0.1)" }}
+                            initial={{ backgroundColor: "rgba(255, 255, 255, 0.05)", borderColor: "rgba(255, 255, 255, 0.1)", color: "#a1a1aa" }}
                             whileInView={{ 
                                 backgroundColor: ["rgba(255, 255, 255, 0.05)", "rgba(255, 255, 255, 0.25)", "rgba(255, 255, 255, 0.05)"],
                                 borderColor: ["rgba(255, 255, 255, 0.1)", "rgba(255, 255, 255, 0.6)", "rgba(255, 255, 255, 0.1)"],
                                 color: ["#a1a1aa", "#ffffff", "#a1a1aa"]
                             }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.2, delay: 0.6, ease: "easeInOut" }}
+                            viewport={{ once: false, amount: 0.5 }}
+                            transition={{ duration: 1.8, delay: 0.2, times: [0, 0.2, 1], ease: "easeInOut" }}
                         >
                             <FileText className="w-3.5 h-3.5" />
                             View Resume
