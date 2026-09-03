@@ -2,7 +2,7 @@
 
 import { siteData } from "@/data/siteData";
 import { ScrollReveal } from "./ScrollReveal";
-import { Mail } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 
 export default function Hero() {
     const { personal } = siteData;
@@ -37,6 +37,16 @@ export default function Hero() {
                     </div>
                     <div className="prose max-w-full text-pretty font-sans text-sm text-zinc-400 dark:prose-invert">
                         <p>{personal.bio}</p>
+                    </div>
+                    <div className="flex sm:hidden justify-start mt-6">
+                        <a 
+                            href={personal.resumeUrl}
+                            target="_blank"
+                            className="inline-flex items-center gap-1.5 text-[11px] font-medium text-zinc-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white hover:border-white/20 transition-all shadow-sm"
+                        >
+                            <FileText className="w-3.5 h-3.5" />
+                            View Resume
+                        </a>
                     </div>
                 </div>
             </ScrollReveal>
