@@ -22,9 +22,9 @@ export default function Hero() {
                         </span>
                     </ScrollReveal>
                     <ScrollReveal delay={0.3}>
-                        <div className="flex items-center justify-center sm:justify-start gap-4 mt-4">
+                        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-6">
                             <a 
-                                className="inline-flex items-center gap-2 text-sm font-semibold bg-white text-black px-4 py-2 rounded-full hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
+                                className="inline-flex items-center gap-2 text-sm font-medium bg-white text-black px-6 py-2.5 rounded-full hover:bg-white/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]" 
                                 href={personal.resumeUrl} 
                                 target="_blank"
                             >
@@ -32,7 +32,7 @@ export default function Hero() {
                                 View Resume
                             </a>
                             <a 
-                                className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-white transition-all" 
+                                className="inline-flex items-center gap-2 text-sm font-medium text-zinc-300 bg-white/5 border border-white/10 px-6 py-2.5 rounded-full hover:bg-white/10 hover:text-white hover:scale-105 transition-all" 
                                 href={`mailto:${personal.email}`}
                             >
                                 <Mail className="w-4 h-4" />
