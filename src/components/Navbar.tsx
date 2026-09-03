@@ -14,10 +14,11 @@ export default function Navbar() {
                 <Link
                     href={personal.resumeUrl}
                     target="_blank"
-                    className="flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-white/[0.08] hover:scale-105 border border-transparent"
+                    className="flex items-center text-xs font-medium text-zinc-300 hover:text-white transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-white/[0.08] hover:scale-105 border border-transparent"
                 >
-                    <FileText size={14} strokeWidth={2} />
-                    <span className="hidden sm:inline">Resume</span>
+                    <FileText size={14} strokeWidth={2} className="shrink-0" />
+                    <span className="hidden sm:inline ml-1.5">Resume</span>
+                    <span className="sm:hidden animate-pop-text-mobile font-bold tracking-tight text-[11px]">Resume</span>
                 </Link>
                 <div className="flex gap-4 items-center">
                     {socials.map((social) => (

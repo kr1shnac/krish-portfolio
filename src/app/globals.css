@@ -259,3 +259,30 @@ nextjs-portal,
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Mobile popup text animation */
+@keyframes popTextMobile {
+  0%, 80% {
+    max-width: 0;
+    opacity: 0;
+    margin-left: 0;
+  }
+  85%, 95% {
+    max-width: 60px;
+    opacity: 1;
+    margin-left: 4px;
+  }
+  100% {
+    max-width: 0;
+    opacity: 0;
+    margin-left: 0;
+  }
+}
+
+.animate-pop-text-mobile {
+  animation: popTextMobile 12s infinite ease-in-out;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
