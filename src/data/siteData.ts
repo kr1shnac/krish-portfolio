@@ -102,11 +102,11 @@ export const siteData: SiteData = {
     skills: [
         { category: "Languages", items: ["TypeScript", "Python", "JavaScript", "Java", "SQL"] },
         { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS"] },
-        { category: "Backend", items: ["Node.js", "Express.js", "Supabase", "REST APIs"] },
+        { category: "Backend", items: ["Node.js", "Express.js", "Bun", "Supabase", "REST APIs"] },
         { category: "Databases", items: ["PostgreSQL", "MongoDB", "Redis", "SQLite", "Prisma"] },
         { category: "AI & Agents", items: ["LLM Integration", "Agentic Workflows", "Memory Systems", "Tool Calling", "OpenRouter"] },
         { category: "Tools", items: ["Git", "GitHub", "Zod", "Cloudinary", "Vercel"] },
-        { category: "Concepts", items: ["System Design", "Authentication", "Real-Time Systems"] }
+        { category: "Concepts", items: ["System Design", "Authentication (JWT, bcrypt)", "Real-Time Systems"] }
     ],
     education: [
         {
@@ -131,7 +131,7 @@ export const siteData: SiteData = {
     achievements: [
         {
             id: "sih",
-            date: "Feb 2025",
+            date: "2025",
             title: "Smart India Hackathon (SIH)",
             location: "India",
             initial: "S",
@@ -224,10 +224,10 @@ export const siteData: SiteData = {
         {
             id: "modular-routing",
             title: "Modular Routing",
-            subtitle: "Intelligent Enterprise LLM Router",
+            subtitle: "Cost-Aware LLM Model Selection",
             status: "in-progress",
-            description: "An intelligent middleware layer for engineering teams that dynamically routes LLM requests. It evaluates query complexity, tracks user credit limits, blocks non-work requests through context-aware filtering, and determines the absolute best model for specific tasks, moving beyond simple cost-based routing.",
-            highlights: ["Complexity Analysis", "Credit Tracking", "Content Filtering", "Task-Specific Routing"],
+            description: "A complexity-aware routing layer for LLM requests that will direct simple queries to cheap, fast models and complex queries to more capable ones, moving beyond simple cost-based routing — targeting the inference-cost problem behind incidents like Uber's 2025 rollback of internal AI tooling access. Actively building: query-complexity classification and cross-model cost tracking are the current focus, with usage-scoping (work vs. personal) planned next.",
+            highlights: ["Query-Complexity Classification", "Cross-Model Cost Tracking", "Work vs. Personal Usage Scoping"],
             techStack: ["Python", "OpenRouter API", "Heuristics"],
         }
     ],

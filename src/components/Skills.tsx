@@ -7,10 +7,10 @@ import { ArrowUpDown } from "lucide-react";
 
 // High-signal skills for the default view
 const featuredSkills = [
-    "TypeScript", "Python", "Next.js", "React", "Node.js",
-    "Express.js", "Supabase", "PostgreSQL", "MongoDB",
-    "Redis", "Prisma", "Tailwind CSS",
-    "System Design", "Agentic Workflows", "LLM Integration", "Memory Systems",
+    "Python", "Agentic Workflows", "LLM Integration", "Memory Systems", "TypeScript",
+    "System Design", "Node.js", "Express.js", "Bun", "PostgreSQL",
+    "Prisma", "Redis", "SQLite", "Supabase", "MongoDB",
+    "JWT", "Zod", "REST APIs", "React", "Next.js", "Tailwind CSS",
 ];
 
 export default function Skills() {
